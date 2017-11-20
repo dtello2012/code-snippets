@@ -13,3 +13,28 @@ $(window).scroll(function() {
         // The element is not visible, do something else
     }
 });
+
+/*
+Another option 
+
+Include this somewhere after jQuery is included:
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+Sample usage:
+$(window).on('resize scroll', function() {
+    if ($('#Something').isInViewport()) {
+        // do something
+    } else {
+        // do something else
+    }
+});
+
+*/
